@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech-to-Text Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <h1>Echoscript</h1>
+    </header>
+    <main>
+        <section class="audio-controls">
+            <h2>Audio Controls</h2>
+            <form id="audio-upload-form" enctype="multipart/form-data" action="/upload_audio" method="POST">
+                <label for="audio-file" class="file"><i class="fa-solid fa-upload"></i>Choose file</label>
+                <input type="file" id="audio-file" name="audio" accept=".mp3, .wav, .ogg" required>
+                <button type="submit">Upload</button>
+            </form>
+            <p id="feedback"></p>
+           <div>
+            <button id="start-recording">Start Recording</button>
+            <button id="stop-recording" disabled>Stop Recording</button>
+           </div>
+            <audio id="audio-preview" controls></audio>
+        </section>
+        <section class="transcription">
+            <h2>Transcription</h2>
+            <div class="transcription-output">
+                <!-- Transcribed text will be displayed here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Echoscript</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
